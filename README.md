@@ -129,8 +129,12 @@ Create a Power Automate flow with:
 
 1. Add the ACE to a Viva Connections dashboard
 2. Click the gear icon to configure
-3. Enter your Power Automate flow URL
-4. Optionally enter a prompt for your flow
+3. **Basic Settings**:
+   - **Card title**: Set the title displayed on the card
+   - **Button label**: Customize the button text (e.g., "Get Report", "View Details", "Load Data")
+   - **Flow URL**: Enter your Power Automate flow URL
+4. **Content Settings**:
+   - **Prompt**: Enter a prompt for your flow (optional)
 5. Save the configuration
 
 ## Technical Implementation

@@ -11,7 +11,13 @@ export class AceDynamicFlowCardPropertyPane {
               groupName: "Basic Settings",
               groupFields: [
                 PropertyPaneTextField('title', {
-                  label: "Card title"
+                  label: "Card title",
+                  description: "Title displayed on the ACE card"
+                }),
+                PropertyPaneTextField('buttonLabel', {
+                  label: "Button label",
+                  description: "Text displayed on the card button (e.g., 'View Details', 'Get Report', 'Load Content')",
+                  value: "View Content" // Default value
                 }),
                 PropertyPaneTextField('flowUrl', {
                   label: "Flow URL",

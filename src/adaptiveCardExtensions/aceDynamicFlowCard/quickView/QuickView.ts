@@ -113,6 +113,7 @@ export class QuickView extends BaseWebQuickView<
     const flowUrl = this.properties.flowUrl || this.properties.powerAutomateUrl;
     console.log('🔗 Flow URL from properties:', flowUrl);
     console.log('🔗 Prompt from properties:', this.properties.prompt);
+    console.log('🔗 Button label from properties:', this.properties.buttonLabel);
     console.log('📊 All properties:', JSON.stringify(this.properties, null, 2));
     
     if (!flowUrl || flowUrl.trim() === '') {
@@ -127,10 +128,20 @@ export class QuickView extends BaseWebQuickView<
             <p><strong>How to configure:</strong></p>
             <ol>
               <li>Click the gear icon on the ACE card</li>
+              <li>Enter your card title</li>
+              <li>Set a custom button label (e.g., "Get Report", "View Details", "Load Data")</li>
               <li>Enter your Power Automate Flow HTTP trigger URL</li>
               <li>Enter a prompt or instruction for your flow (optional)</li>
               <li>Save the configuration</li>
             </ol>
+            <p><strong>Button Label Examples:</strong></p>
+            <ul>
+              <li>"Get Daily Report" - for reports</li>
+              <li>"View Details" - for general information</li>
+              <li>"Load Content" - for dynamic content</li>
+              <li>"Generate Summary" - for AI-generated content</li>
+              <li>"Check Status" - for status updates</li>
+            </ul>
             <p><strong>PnP Recommended Flow Setup:</strong></p>
             <ul>
               <li>Use "When an HTTP request is received" trigger</li>

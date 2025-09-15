@@ -6,8 +6,9 @@ import { AceDynamicFlowCardPropertyPane } from './AceDynamicFlowCardPropertyPane
 
 export interface IAceDynamicFlowCardAdaptiveCardExtensionProps {
   title: string;
-  flowUrl: string; // Make sure this matches your property pane
-  prompt: string; // New prompt property
+  flowUrl: string;
+  prompt: string;
+  buttonLabel: string; // New button label property
   powerAutomateUrl?: string; // Keep for backward compatibility
 }
 
@@ -32,6 +33,14 @@ export default class AceDynamicFlowCardAdaptiveCardExtension extends BaseAdaptiv
       isLoading: true,
       error: ''
     };
+
+    // Set default properties if not configured
+    if (!this.properties.buttonLabel) {
+      this.properties.buttonLabel = 'View Content';
+    }
+    if (!this.properties.title) {
+      this.properties.title = 'Dynamic Flow Card';
+    }
 
     this.cardNavigator.register(CARD_VIEW_REGISTRY_ID, () => new CardView());
     this.quickViewNavigator.register(QUICK_VIEW_REGISTRY_ID, () => new QuickView());

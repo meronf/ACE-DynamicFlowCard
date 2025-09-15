@@ -1,9 +1,9 @@
 import {
-  BaseComponentsCardView,
-  ComponentsCardViewParameters,
-  BasicCardView,
+  BaseBasicCardView,
+  IBasicCardParameters,
   IExternalLinkCardAction,
-  IQuickViewCardAction
+  IQuickViewCardAction,
+  ICardButton
 } from '@microsoft/sp-adaptive-card-extension-base';
 import {
   IAceDynamicFlowCardAdaptiveCardExtensionProps,
@@ -11,24 +11,20 @@ import {
   QUICK_VIEW_REGISTRY_ID
 } from '../AceDynamicFlowCardAdaptiveCardExtension';
 
-export class CardView extends BaseComponentsCardView<
+export class CardView extends BaseBasicCardView<
   IAceDynamicFlowCardAdaptiveCardExtensionProps,
-  IAceDynamicFlowCardAdaptiveCardExtensionState,
-  ComponentsCardViewParameters
+  IAceDynamicFlowCardAdaptiveCardExtensionState
 > {
-  public get cardViewParameters(): ComponentsCardViewParameters {
-    return BasicCardView({
-      cardBar: {
-        componentName: 'cardBar',
-        title: this.properties.title
-      },
-      header: {
-        componentName: 'text',
-        text: "Dynamic HTML Content"
-      },
-      footer: {
-        componentName: 'cardButton',
-        title: "View HTML",
+  /**
+   * Buttons will be visible for both 'Medium' and 'Large' card sizes with Basic Card View.
+   * It will support up to two buttons.
+   */
+  public get cardButtons(): [ICardButton] | [ICardButton, ICardButton] | undefined {
+    const buttonLabel = this.properties.buttonLabel || 'View Content'; // Fallback to default
+    
+    return [
+      {
+        title: buttonLabel,
         action: {
           type: 'QuickView',
           parameters: {
@@ -36,7 +32,14 @@ export class CardView extends BaseComponentsCardView<
           }
         }
       }
-    });
+    ];
+  }
+
+  public get data(): IBasicCardParameters {
+    return {
+      primaryText: this.properties.title || 'Dynamic Flow Card',
+      title: this.properties.title || 'Dynamic Flow Card'
+    };
   }
 
   public get onCardSelection(): IQuickViewCardAction | IExternalLinkCardAction | undefined {
