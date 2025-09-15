@@ -65,7 +65,7 @@ ACE Card → AadTokenProvider → Bearer Token → Power Automate Flow → HTML 
 
 | Solution               | Author(s)                                               |
 | ---------------------- | ------------------------------------------------------- |
-| ace-dynamic-flow-card  | [Meron Fridman - Principal Consultant - Microsoft ISD] ([https://www.microsoft.com/en-us/industry?activetab=pillars%3aprimaryr11?activetab=pillars%3aprimaryr11])          |
+| ace-dynamic-flow-card  | [Meron Fridman - Principal Consultant - Microsoft ISD](https://www.microsoft.com/en-us/industry?activetab=pillars%3aprimaryr11?activetab=pillars%3aprimaryr11)          |
 
 ## Version History
 
