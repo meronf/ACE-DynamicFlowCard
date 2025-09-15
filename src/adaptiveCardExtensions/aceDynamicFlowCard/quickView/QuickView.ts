@@ -59,13 +59,6 @@ export class QuickView extends BaseWebQuickView<
         <div style="padding: 20px; text-align: center; border: 2px solid #007acc; border-radius: 8px; background-color: #f0f8ff;">
           <div style="margin-bottom: 10px; font-size: 24px;">⏳</div>
           <p style="margin: 0; font-weight: bold;">Loading Power Automate Flow...</p>
-          <small style="color: #666;">Using PnP Bearer token approach</small>
-          <div style="margin-top: 15px;">
-            <div style="display: inline-block; width: 20px; height: 20px; border: 3px solid #007acc; border-top-color: transparent; border-radius: 50%; animation: spin 1s linear infinite;"></div>
-          </div>
-          <div style="margin-top: 10px;">
-            <small>Properties: ${JSON.stringify(this.properties)}</small>
-          </div>
         </div>
         <style>
           @keyframes spin {
