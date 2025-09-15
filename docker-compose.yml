@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  spfx-dev:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: ace-dynamic-flow-card
+    ports:
+      - "4321:4321"
+      - "35729:35729"
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+      - spfx_certs:/home/spfx/.rushstack
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - HTTPS=false
+      - NODE_TLS_REJECT_UNAUTHORIZED=0
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+volumes:
+  spfx_certs:

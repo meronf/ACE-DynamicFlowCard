@@ -1,0 +1,50 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "ace-dynamic-flow-card-client-side-solution",
+    "id": "19108a4c-fb0b-40c7-bd66-e760c0323b88",
+    "version": "1.0.0.2",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "webApiPermissionRequests": [
+      {
+        "resource": "Microsoft Graph",
+        "scope": "User.Read"
+      },
+      {
+        "resource": "Microsoft Flow Service",
+        "scope": "User"
+      }
+    ],
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.20.0"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "ACE-DynamicFlowCard description"
+      },
+      "longDescription": {
+        "default": "ACE-DynamicFlowCard description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "ace-dynamic-flow-card Feature",
+        "description": "The feature that activates elements of the ace-dynamic-flow-card solution.",
+        "id": "454e000c-98be-4d01-a758-814dc20bfa0b",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/ace-dynamic-flow-card.sppkg"
+  }
+}

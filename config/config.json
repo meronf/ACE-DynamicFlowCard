@@ -1,0 +1,16 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "ace-dynamic-flow-card-adaptive-card-extension": {
+      "components": [
+        {
+          "entrypoint": "./lib/adaptiveCardExtensions/aceDynamicFlowCard/AceDynamicFlowCardAdaptiveCardExtension.js",
+          "manifest": "./src/adaptiveCardExtensions/aceDynamicFlowCard/AceDynamicFlowCardAdaptiveCardExtension.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {}
+}
