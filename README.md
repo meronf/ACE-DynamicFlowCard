@@ -6,7 +6,7 @@ A SharePoint Framework (SPFx) Adaptive Card Extension (ACE) that integrates with
 
 The solution demonstrates how to securely call Power Automate flows from Viva Connections cards using authentication patterns with Bearer tokens, then renders the HTML response directly in the QuickView using the modern HTML-based approach. This enables unlimited design flexibility and dynamic content presentation that goes beyond traditional Adaptive Card constraints.
 
-Perfect for creating dynamic content cards that can show personalized information, reports, interactive dashboards, or AI-generated content with full HTML/CSS styling capabilities.
+Perfect for crafting dynamic content cards that showcase **AI-generated content**, insights, personalized data, interactive dashboards, and reports — all with full HTML/CSS styling capabilities. The AI-generated content can adapt in real time to user context, making each card uniquely intelligent and responsive.
 
 **Key Innovation**: Utilizes the [HTML QuickView capability](https://learn.microsoft.com/en-us/sharepoint/dev/spfx/viva/get-started/build-html-quickview-adaptive-card-extension) to render Power Automate flow responses as rich HTML content directly in Viva Connections, providing low code citizen developers with complete control over the user interface and user experience.
 
