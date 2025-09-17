@@ -126,7 +126,7 @@ Add the following to your `package-solution.json`:
    - Customize the response HTML content to match your requirements
    - Click **"Save"** and test the flow
 
-C### Flow Solution Details
+### Flow Solution Details
 
 The included flow solution (`ACEContentFlow_1_0_0_1.zip`) contains:
 
