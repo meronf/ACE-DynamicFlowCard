@@ -104,8 +104,6 @@ Add the following to your `package-solution.json`:
 
 ### 3. Power Automate Flow Setup
 
-#### Import the Pre-built Flow Solution
-
 1. **Download the Flow Solution**:
    - Navigate to the `Flow/` folder in this repository
    - Download the `ACEContentFlow_1_0_0_1.zip` file
@@ -128,7 +126,7 @@ Add the following to your `package-solution.json`:
    - Customize the response HTML content to match your requirements
    - Click **"Save"** and test the flow
 
-### Flow Solution Details
+C### Flow Solution Details
 
 The included flow solution (`ACEContentFlow_1_0_0_1.zip`) contains:
 
@@ -165,46 +163,104 @@ After importing, you can customize the flow to:
 
 - **Integrate with other services** (SharePoint lists, databases, APIs)
 - **Add AI capabilities** (Azure OpenAI, AI Builder)
-- **Include business logic** (approvals, calculations, data processing)
 - **Connect to external systems** (CRM, ERP, third-party APIs)
-- **Generate reports** (Power BI, Excel, custom dashboards)
 
-### Example Flow Enhancements
+### 4. ACE Card Configuration
 
-```html
-<!-- Example: AI-powered response using the prompt -->
-<div style="font-family: Arial, sans-serif; padding: 20px;">
-  <h2>🤖 AI Response</h2>
-  <p><strong>Your Question:</strong> @{triggerBody()?['prompt']}</p>
-  <p><strong>AI Answer:</strong> @{outputs('AI_Compose_Action')?['body']}</p>
-  <hr>
-  <small>Generated for @{triggerBody()?['displayName']} at @{triggerBody()?['timestamp']}</small>
-</div>
-```
+1. Add the ACE to a Viva Connections dashboard
+2. Click the gear icon to configure
+3. **Basic Settings**:
+   - **Card title**: Set the title displayed on the card
+   - **Button label**: Customize the button text (e.g., "Get Report", "View Details", "Load Data")
+   - **Flow URL**: Enter your Power Automate flow URL
+4. **Content Settings**:
+   - **Prompt**: Enter a prompt for your flow (optional)
+5. Save the configuration
 
-### Testing Your Flow
+## Technical Implementation
 
-1. **Use the built-in tester** in Power Automate
-2. **Test with sample JSON**:
-```json
-{
-  "userId": "test@domain.com",
-  "userEmail": "test@domain.com",
-  "displayName": "Test User",
-  "siteUrl": "https://tenant.sharepoint.com/sites/test",
-  "timestamp": "2025-09-17T10:00:00.000Z",
-  "requestId": "test123",
-  "tenantId": "test-tenant-id",
-  "prompt": "Hello, how are you?"
-}
-```
-3. **Verify HTML response** renders correctly
-4. **Copy the HTTP URL** for ACE configuration
+### Key Files
 
-### Important Notes
+- **QuickView.ts**: Main component with authentication and flow integration
+- **AceDynamicFlowCardPropertyPane.ts**: Configuration interface
+- **AceDynamicFlowCardAdaptiveCardExtension.ts**: Main ACE class and interfaces
 
-- The solution import process may require you to **create or update connections** for any connectors used in the flow
-- After import, the flow will be available in the **Solutions** area, not in **"My flows"**
-- Make sure to **turn on the flow** after import if it's not automatically enabled
-- The HTTP trigger URL will be different in your environment - always copy the URL from your imported flow
-````
+
+### Common Issues
+
+1. **403 Forbidden Error**: API permissions not approved in SharePoint Admin Center
+2. **MisMatchingOAuthClaims**: Flow security settings don't match token claims
+3. **Empty Response**: Flow doesn't have a Response action or returns non-HTML content
+4. **Infinite Loading**: Check browser console for JavaScript errors
+
+### Debug Information
+
+The solution includes comprehensive logging. Check browser console for:
+- 🔐 Authentication steps
+- 📤 Request payload details
+- 📥 Response information
+- ❌ Error details with suggested solutions
+
+## Security Considerations
+
+- Bearer tokens are obtained dynamically and never stored
+- No API keys or secrets are stored in the codebase
+- Tenant ID is extracted from JWT for enhanced security
+- Follows Microsoft security best practices for SPFx solutions
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## Disclaimer
+
+**THIS CODE IS PROVIDED _AS IS_ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING ANY IMPLIED WARRANTIES OF FITNESS FOR A PARTICULAR PURPOSE, MERCHANTABILITY, OR NON-INFRINGEMENT.**
+
+---
+
+## Minimal Path to Awesome
+
+1. **Clone this repository**
+   ```bash
+   git clone https://github.com/meronf/ACE-DynamicFlowCard.git
+   cd ACE-DynamicFlowCard
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Build and serve locally**
+   ```bash
+   gulp build
+   gulp serve
+   ```
+
+4. **Test in SharePoint Workbench**
+   - Open SharePoint Workbench in your tenant
+   - Add the ACE to test locally
+
+5. **Deploy to production**
+   ```bash
+   gulp build --ship
+   gulp bundle --ship
+   gulp package-solution --ship
+   ```
+
+6. **Upload to App Catalog and approve API permissions**
+
+## Useful Resources
+
+- [PnP Power Automate Integration Article](https://pnp.github.io/blog/post/using-power-automate-flow-api-in-your-spfx-solution/)
+- [SPFx ACE Documentation](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/viva/overview-viva-connections)
+- [Power Automate HTTP Triggers](https://docs.microsoft.com/en-us/power-automate/triggers-introduction)
+- [SharePoint Framework Authentication](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/use-aadhttpclient)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
