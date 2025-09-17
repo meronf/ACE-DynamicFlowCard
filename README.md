@@ -87,10 +87,7 @@ ACE Card → AadTokenProvider → Bearer Token → Power Automate Flow → HTML 
 
 | Version | Date             | Comments                                    |
 | ------- | ---------------- | ------------------------------------------- |
-| 1.0     | September 2025   | Initial release with Bearer token auth     |
-| 0.9     | September 2025   | Added prompt configuration support          |
-| 0.8     | September 2025   | Implemented PnP authentication pattern     |
-| 0.5     | September 2025   | Basic ACE structure and Power Automate integration |
+| 1.0     | September 2025   | Initial release    |
 
 ## Configuration
 
