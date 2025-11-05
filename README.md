@@ -72,7 +72,7 @@ ACE Card → AadTokenProvider → Bearer Token → Power Automate Flow → HTML 
   "siteUrl": "https://tenant.sharepoint.com/sites/site",
   "timestamp": "2025-09-15T11:30:00.000Z",
   "requestId": "abc123def",
-  "tenantId": "c3bdda97-e8dc-48ba-a1c0-a57673aa1dac",
+  "tenantId": "a5bdda97-e8dc-48fg-a1d0-a57673cc1dac",
   "prompt": "User-configured prompt text"
 }
 ```
